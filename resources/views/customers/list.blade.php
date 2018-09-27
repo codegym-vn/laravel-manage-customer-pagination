@@ -34,9 +34,9 @@
                     @foreach($customers as $key => $customer)
                     <tr>
                         <th scope="row">{{ ++$key }}</th>
-                        <td>{{ $customer->name }}</td>
-                        <td>{{ $customer->dob }}</td>
-                        <td>{{ $customer->email }}</td>
+                        <td>{{ $customer['name'] }}</td>
+                        <td>{{ $customer['bod'] }}</td>
+                        <td>{{ $customer['email'] }}</td>
                     </tr>
                     @endforeach
                 @endif
