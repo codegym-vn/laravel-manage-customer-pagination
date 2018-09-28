@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Customer;
 use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CustomerController extends Controller
 {
@@ -45,7 +46,41 @@ class CustomerController extends Controller
         $customer->dob      = $request->input('dob');
         $customer->save();
 
+        //dung session de dua ra thong bao
+        Session::flash('success', 'Tạo mới khách hành thành công');
         //tao moi xong quay ve trang danh sach khach hang
+        return redirect()->route('customers.index');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $customer = Customer::findOrFail($id);
+        return view('customers.edit', compact('customer'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update(Request $request, $id)
+    {
+        $customer = Customer::findOrFail($id);
+        $customer->name     = $request->input('name');
+        $customer->email    = $request->input('email');
+        $customer->dob      = $request->input('dob');
+        $customer->save();
+
+        //dung session de dua ra thong bao
+        Session::flash('success', 'Cập nhật khách hành thành công');
+        //cap nhat xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
 }
