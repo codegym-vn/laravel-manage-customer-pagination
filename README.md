@@ -1,4 +1,4 @@
-# laravel-manage-customer-show-data
+# laravel-manage-customer-crud
 Ứng dụng quản lý khách hàng: 
 
 - Luyện tập sử dụng Eloquent
