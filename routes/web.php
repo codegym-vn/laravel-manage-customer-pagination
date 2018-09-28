@@ -30,5 +30,7 @@ Route::group(['prefix' => 'customers'], function () {
 
     Route::post('/{id}/edit','CustomerController@update')->name('customers.update');
 
+    Route::get('/{id}/destroy','CustomerController@destroy')->name('customers.destroy');
+
 });
 

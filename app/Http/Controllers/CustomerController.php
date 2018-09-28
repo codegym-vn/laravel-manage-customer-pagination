@@ -83,4 +83,22 @@ class CustomerController extends Controller
         //cap nhat xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $customer = Customer::findOrFail($id);
+        $customer->delete();
+
+        //dung session de dua ra thong bao
+        Session::flash('success', 'Xóa khách hành thành công');
+        //cap nhat xong quay ve trang danh sach khach hang
+        return redirect()->route('customers.index');
+    }
+
 }

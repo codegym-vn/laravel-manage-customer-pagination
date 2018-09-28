@@ -22,7 +22,8 @@
                         <label for="exampleInputEmail1">Ngày sinh</label>
                         <input type="date" class="form-control" name="dob" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">Thêm mới</button>
+                    <button class="btn btn-secondary" onclick="window.history.go(-1); return false;">Hủy</button>
                 </form>
             </div>
         </div>
