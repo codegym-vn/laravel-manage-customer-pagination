@@ -97,7 +97,7 @@ class CustomerController extends Controller
 
         //dung session de dua ra thong bao
         Session::flash('success', 'Xóa khách hàng thành công');
-        //cap nhat xong quay ve trang danh sach khach hang
+        //xoa xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
 
