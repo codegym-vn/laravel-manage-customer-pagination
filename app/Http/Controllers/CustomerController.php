@@ -47,7 +47,7 @@ class CustomerController extends Controller
         $customer->save();
 
         //dung session de dua ra thong bao
-        Session::flash('success', 'Tạo mới khách hành thành công');
+        Session::flash('success', 'Tạo mới khách hàng thành công');
         //tao moi xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
@@ -79,7 +79,7 @@ class CustomerController extends Controller
         $customer->save();
 
         //dung session de dua ra thong bao
-        Session::flash('success', 'Cập nhật khách hành thành công');
+        Session::flash('success', 'Cập nhật khách hàng thành công');
         //cap nhat xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
@@ -96,7 +96,7 @@ class CustomerController extends Controller
         $customer->delete();
 
         //dung session de dua ra thong bao
-        Session::flash('success', 'Xóa khách hành thành công');
+        Session::flash('success', 'Xóa khách hàng thành công');
         //cap nhat xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
     }
