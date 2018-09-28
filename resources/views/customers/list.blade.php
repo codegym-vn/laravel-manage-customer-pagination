@@ -31,6 +31,7 @@
                 @endif
                 </tbody>
             </table>
+            <a class="btn btn-primary" href="{{ route('customers.create') }}">Thêm mới</a>
         </div>
     </div>
 @endsection

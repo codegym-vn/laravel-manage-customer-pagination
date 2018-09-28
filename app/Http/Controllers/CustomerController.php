@@ -28,7 +28,7 @@ class CustomerController extends Controller
 
     public function create()
     {
-
+        return view('customers.create');
     }
 
     /**
@@ -37,8 +37,15 @@ class CustomerController extends Controller
      * @return Response
      */
 
-    public function store()
+    public function store(Request $request)
     {
+        $customer = new Customer();
+        $customer->name     = $request->input('name');
+        $customer->email    = $request->input('email');
+        $customer->dob      = $request->input('dob');
+        $customer->save();
 
+        //tao moi xong quay ve trang danh sach khach hang
+        return redirect()->route('customers.index');
     }
 }
