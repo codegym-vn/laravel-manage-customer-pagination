@@ -11,13 +11,20 @@
 |
 */
 
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
+//tao group route customers
 Route::group(['prefix' => 'customers'], function () {
 
     Route::get('/','CustomerController@index')->name('customers.index');
+
+    Route::get('/create','CustomerController@create')->name('customers.create');
+
+    Route::post('/create','CustomerController@store')->name('customers.store');
 
 });
 

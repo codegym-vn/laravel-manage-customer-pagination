@@ -3,37 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Customer;
+use http\Env\Response;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+
     public function index()
     {
-        //tao mang khach hang
-        $customers = [
-            '0' => [
-                'id'  => 1,
-                'name'=> 'customer1',
-                'bod' => '1998-09-01',
-                'email' => 'customer1@gmail.com'
-            ],
-
-            '1' => [
-                'id'  => 2,
-                'name'=> 'customer2',
-                'bod' => '1998-09-01',
-                'email' => 'customer2@gmail.com'
-            ],
-
-            '2' => [
-                'id'  => 3,
-                'name'=> 'customer3',
-                'bod' => '1998-09-01',
-                'email' => 'customer3@gmail.com'
-            ]
-        ];
-
-        //goi view va truyen du lieu sang view
+        $customers = Customer::all();
         return view('customers.list', compact('customers'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return Response
+     */
+
+    public function create()
+    {
+
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @return Response
+     */
+
+    public function store()
+    {
+
     }
 }
