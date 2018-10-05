@@ -47,7 +47,54 @@ class CityController extends Controller
 
         //dung session de dua ra thong bao
         Session::flash('success', 'Tạo mới thành công');
-        //tao moi xong quay ve trang danh sach khach hang
+        //tao moi xong quay ve trang danh sach tinh thanh
+        return redirect()->route('cities.index');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        $city = City::findOrFail($id);
+        return view('cities.edit', compact('city'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function update(Request $request, $id)
+    {
+        $city = City::findOrFail($id);
+        $city->name     = $request->input('name');
+        $city->save();
+
+        //dung session de dua ra thong bao
+        Session::flash('success', 'Cập nhật thành công');
+        //cap nhat xong quay ve trang danh sach tinh
+        return redirect()->route('cities.index');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $city = City::findOrFail($id);
+        $city->delete();
+
+        //dung session de dua ra thong bao
+        Session::flash('success', 'Xóa  thành công');
+        //cap nhat xong quay ve trang danh sach tinh thanh
         return redirect()->route('cities.index');
     }
 }
