@@ -5,7 +5,7 @@
     <div class="col-12">
         <div class="row">
             <div class="col-12">
-                <h1>Danh Sách Khách Hàng</h1>
+                <h1>Danh Sách Tỉnh Thành</h1>
             </div>
             <div class="col-12">
                 @if (Session::has('success'))
@@ -43,7 +43,7 @@
                 @endif
                 </tbody>
             </table>
-            <a class="btn btn-primary" href="">Thêm mới</a>
+            <a class="btn btn-primary" href="{{ route('cities.create') }}">Thêm mới</a>
         </div>
     </div>
 @endsection

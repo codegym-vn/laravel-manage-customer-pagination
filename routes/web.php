@@ -37,5 +37,9 @@ Route::group(['prefix' => 'customers'], function () {
 //tao group route cties
 Route::group(['prefix' => 'cities'], function () {
     Route::get('/','CityController@index')->name('cities.index');
+
+    Route::get('/create','CityController@create')->name('cities.create');
+
+    Route::post('/create','CityController@store')->name('cities.store');
 });
 
