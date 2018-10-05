@@ -64,7 +64,9 @@ class CustomerController extends Controller
     public function edit($id)
     {
         $customer = Customer::findOrFail($id);
-        return view('customers.edit', compact('customer'));
+        $cities = City::all();
+
+        return view('customers.edit', compact('customer', 'cities'));
     }
 
     /**
