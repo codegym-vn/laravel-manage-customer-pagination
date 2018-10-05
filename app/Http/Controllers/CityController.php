@@ -90,6 +90,10 @@ class CityController extends Controller
     public function destroy($id)
     {
         $city = City::findOrFail($id);
+
+        //xoa khach hang thuoc tinh thanh nay
+        $city->customers()->delete();
+
         $city->delete();
 
         //dung session de dua ra thong bao
