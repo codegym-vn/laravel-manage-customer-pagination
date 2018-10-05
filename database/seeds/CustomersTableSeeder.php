@@ -17,6 +17,7 @@ class CustomersTableSeeder extends Seeder
         $customer->name = "customer 1";
         $customer->dob  = "2018-09-26";
         $customer->email  = "customer1@codegym.vn";
+        $customer->city_id  = 1;
         $customer->save();
 
         $customer = new Customer();
@@ -24,6 +25,7 @@ class CustomersTableSeeder extends Seeder
         $customer->name = "customer 2";
         $customer->dob  = "2018-09-26";
         $customer->email  = "customer2@codegym.vn";
+        $customer->city_id  = 1;
         $customer->save();
 
         $customer = new Customer();
@@ -31,6 +33,7 @@ class CustomersTableSeeder extends Seeder
         $customer->name = "customer 3";
         $customer->dob  = "2018-09-26";
         $customer->email  = "customer3@codegym.vn";
+        $customer->city_id  = 2;
         $customer->save();
     }
 }
