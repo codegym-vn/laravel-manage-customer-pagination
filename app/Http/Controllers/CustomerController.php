@@ -19,7 +19,8 @@ class CustomerController extends Controller
     public function index()
     {
         $customers = Customer::all();
-        return view('customers.list', compact('customers'));
+        $cities = City::all();
+        return view('customers.list', compact('customers', 'cities'));
     }
 
     /**
@@ -81,6 +82,7 @@ class CustomerController extends Controller
         $customer->name     = $request->input('name');
         $customer->email    = $request->input('email');
         $customer->dob      = $request->input('dob');
+        $customer->city_id  = $request->input('city_id');
         $customer->save();
 
         //dung session de dua ra thong bao
@@ -104,6 +106,23 @@ class CustomerController extends Controller
         Session::flash('success', 'Xóa khách hàng thành công');
         //cap nhat xong quay ve trang danh sach khach hang
         return redirect()->route('customers.index');
+    }
+
+
+
+    public function filterByCity(Request $request)
+    {
+        $idCity = $request->input('city_id');
+
+        //kiem tra city co ton tai khong
+        $cityFilter = City::findOrFail($idCity);
+        //lay ra tat ca customer cua cityFiler
+        $customers = Customer::where('city_id', $cityFilter->id)->get();
+        $totalCustomerFilter = count($customers);
+
+        $cities = City::all();
+
+        return view('customers.list', compact('customers', 'cities', 'totalCustomerFilter', 'cityFilter'));
     }
 
 }

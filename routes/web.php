@@ -32,6 +32,8 @@ Route::group(['prefix' => 'customers'], function () {
 
     Route::get('/{id}/destroy','CustomerController@destroy')->name('customers.destroy');
 
+    Route::get('/filter','CustomerController@filterByCity')->name('customers.filterByCity');
+
 });
 
 //tao group route cties

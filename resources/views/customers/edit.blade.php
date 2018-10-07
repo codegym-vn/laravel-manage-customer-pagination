@@ -15,15 +15,15 @@
                         <input type="text" class="form-control" name="name" value="{{ $customer->name }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Email</label>
+                        <label>Email</label>
                         <input type="email" class="form-control" name="email" value="{{ $customer->email }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputEmail1">Ngày sinh</label>
+                        <label>Ngày sinh</label>
                         <input type="date" class="form-control" name="dob" value="{{ $customer->dob }}" required>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlSelect1">Tỉnh thành</label>
+                        <label>Tỉnh thành</label>
                         <select class="form-control" name="city_id">
                             @foreach($cities as $city)
                                 <option
