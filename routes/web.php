@@ -34,6 +34,9 @@ Route::group(['prefix' => 'customers'], function () {
 
     Route::get('/filter','CustomerController@filterByCity')->name('customers.filterByCity');
 
+    Route::get('/search','CustomerController@search')->name('customers.search');
+
+
 });
 
 //tao group route cties
