@@ -1,9 +1,9 @@
 # laravel-manage-customer-crud
 Ứng dụng quản lý khách hàng: 
 
-- Luyện tập sử dụng Eloquent
+- Luyện tập phân trang
 
-- Thực hành CRUD cơ bản
+- Chức năng tìm kiếm
 
 #
 Mã nguồn được sử dụng trong thực hành tại <a href="https://codegym.vn">CodeGym</a>
