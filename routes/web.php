@@ -32,5 +32,23 @@ Route::group(['prefix' => 'customers'], function () {
 
     Route::get('/{id}/destroy','CustomerController@destroy')->name('customers.destroy');
 
+    Route::get('/filter','CustomerController@filterByCity')->name('customers.filterByCity');
+
+});
+
+//tao group route cties
+Route::group(['prefix' => 'cities'], function () {
+    Route::get('/','CityController@index')->name('cities.index');
+
+    Route::get('/create','CityController@create')->name('cities.create');
+
+    Route::post('/create','CityController@store')->name('cities.store');
+
+    Route::get('/{id}/edit','CityController@edit')->name('cities.edit');
+
+    Route::post('/{id}/edit','CityController@store')->name('cities.store');
+
+    Route::get('/{id}/delete','CityController@destroy')->name('cities.destroy');
+
 });
 
